@@ -1,25 +1,71 @@
 <head>
-  <title>myapp</title>
+  <title>My first app in meteor</title>
 </head>
-
 <body>
-  <h1>Welcome to Meteor!</h1>
+  <h1>Eventos universitarios</h1>
+  {{> universitarios}}
 
-  {{> hello}}
-  {{> info}}
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="universitarios">
+    <form class="nuevo-evento">
+    Nombre evento:
+    <br>
+    <input type ="text" name= "nombre">
+    <br>
+    Encargado:
+    <br>
+    <input type ="text" name= "encargado">
+    <br>
+    descrpcion:
+    <br>
+    <input type ="text" name= "descripcion">
+    <br>
+    fecha inicio:
+    <br>
+    <input type ="text" name= "fechaInicio">
+    <br>
+    fecha final:
+    <br>
+    <input type ="text" name= "fechaFinal">
+    <br>
+    ubicacion:
+    <br>
+    <input type ="text" name= "ubicacion">
+    <button> Enviar</button>
+
+    </form>
+
+    <h2>Lista de eventos Actuales</h2>
+    {{#each listarEventos}}
+    <li> Nombre evento: {{nombre}} Encargado:{{encargado}} Fecha Inicio: {{fechaInicio}} Fecha Final: {{fechaFinal}} Ubicacion: {{ubicacion}}</li>
+    {{/each}}
+    
 </template>
 
-<template name="info">
-  <h2>Learn Meteor!</h2>
-  <ul>
-    <li><a href="https://www.meteor.com/try" target="_blank">Do the Tutorial</a></li>
-    <li><a href="http://guide.meteor.com" target="_blank">Follow the Guide</a></li>
-    <li><a href="https://docs.meteor.com" target="_blank">Read the Docs</a></li>
-    <li><a href="https://forums.meteor.com" target="_blank">Discussions</a></li>
-  </ul>
+<template name="perfil">
+<!--   <p> Nombre:{{nombre}}</p>
+  {{#if edad}}
+  <p>Edad:{{edad}}</p>
+  {{/if}} -->
+
+  <!--llamado a funcion helper -->
+  <!-- {{ejhelper}} -->
+
+  <!-- Iterando ando -->
+  <!-- {{#each perfilList}}
+    <p>Nombre:{{nombre}}</p>
+    <p> Edad:{{edad}}</p>
+{{/each}} -->
+<!-- pasando datos
+{{ pasandoDatos "perro" "gato"}} -->
+
+<!-- <button> Random</button>
+{{randomHelper}} -->
+
+
+<!-- {{#each traerDeBack}}
+    <li>{{name}} {{age}}</li>
+{{/each}} -->
+
 </template>
